@@ -1,0 +1,113 @@
+:root {
+    --catpputhin: rgb(47, 38, 64);
+    --catpputhinborder: rgb(34, 28, 46);
+    --whitecat: rgb(206, 203, 212);
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#draw {
+    height: 340px;
+    width: 100%;
+    background-color: var(--catpputhin);
+}
+.cirvis {
+    margin-left: 100px;
+    margin-top: 50px;
+    height: 50px;
+    width: 50px;
+    animation-name: cirvisTransform;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cirvisTransform {
+    0% {
+        background-color: var(--catpputhin);
+        transform: rotate(0deg);
+    }
+    50% {
+        background-color: var(--whitecat);
+        transform: rotate(60deg);
+    }
+    100% {
+        background-color: var(--catpputhin);
+        transform: rotate(0deg);
+    }
+}
+
+.visual {
+    width: 100%;
+    padding: 10px;
+    height: 190px;
+    background-color: var(--catpputhin);
+}
+#terminaltext {
+    padding: 10px;
+    color: var(--whitecat);
+    font-family: cursive;
+    font-size: 24px;
+}
+.card {
+    overflow: hidden;
+    background-color: var(--catpputhin);
+    border: 25px solid var(--catpputhinborder);
+}
+.fieldterm {
+    /*padding: 5px;*/
+    width: 600px;
+}
+.fieldterm input[type="text"] {
+    width: 66%;
+    padding: 5px;
+    background-color: var(--catpputhin);
+    border: 2px solid var(--whitecat);
+    color: var(--whitecat);
+    font-family: cursive;
+}
+.fieldterm input[type="text"]:focus {
+    outline: none;
+    border: 3px solid rgb(235, 233, 240);
+}
+.fieldterm input[type="text"]:hover {
+    border: 3px solid rgb(229, 227, 232);
+}
+.fieldterm input[type="submit"] {
+    width: 30%;
+    padding: 5px;
+    background-color: var(--whitecat);
+    border: 2px solid var(--catpputhin);
+    color: var(--catpputhin);
+    font-family: cursive;
+}
+.fieldterm input[type="submit"]:focus {
+    outline: none;
+    padding: 6px;
+    background-color: rgb(235, 233, 240);
+}
+.fieldterm input[type="submit"]:hover {
+    padding: 6px;
+    background-color: rgb(229, 227, 232);
+}
+.catpputhin {
+    background-color: var(--catpputhin);
+}
+.catpputhinborder {
+    background-color: var(--catpputhinborder);
+}
+.whiteCat {
+    background-color: var(--whitecat);
+}
+.top {
+    top: 0;
+}
+.bottom {
+    bottom: 0;
+}
+.left {
+    float: left;
+}
+:right {
+    float: right;
+}

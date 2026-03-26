@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Visual Play</title>
+        <link rel="stylesheet" href="design.css" />
+    </head>
+    <body class="catpputhinborder">
+        <div class="card">
+            <div class="left">
+                <form class="fieldterm">
+                    <input type="text" name="command" />
+                    <input type="submit" name="setenter" value="Terminate" />
+                </form>
+                <p id="terminaltext">>_</p>
+            </div>
+            <div class="card right">
+                <div class="visual top">
+                    <div class="cirvis"></div>
+                </div>
+                <div class="card bottom">
+                    <canvas id="draw">
+                </div>
+            </div>
+        </div>
+        <script src="handler.js"></script>
+    </body>
+</html>
