@@ -1,6 +1,7 @@
 const enterTerminal = document.getElementById("btn");
 
-enterTerminal.addEventListener("click", function () {
+enterTerminal.addEventListener("click", function (event) {
+  event.preventDefault();
   alert("tes");
 });
 
