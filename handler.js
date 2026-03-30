@@ -1,3 +1,9 @@
+const enterTerminal = document.getElementById("btn");
+
+enterTerminal.addEventListener("click", function () {
+  alert("tes");
+});
+
 function Circle(nameId, cont) {
   var cir = document.getElementById(nameId);
   var ctx = cir.getContext(cont);
