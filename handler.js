@@ -1,9 +1,16 @@
 let enterTerminal = document.querySelector('[name="setenter"]');
 let textCommand = document.querySelector('[name="command"]');
+var textTerminal = document.getElementById("terminaltext");
+const typingTerminal = "><span id=cursor>_</span>";
+
+function earlyTerminal() {
+  textTerminal.innerHTML = typingTerminal;
+}
+
+earlyTerminal();
 
 enterTerminal.addEventListener("click", function (event) {
   event.preventDefault();
-  var textTerminal = document.getElementById("terminaltext");
   if (textCommand.value == "Circle") {
     textTerminal.innerHTML += "<br /> Execute Make Circle";
   }
@@ -14,6 +21,13 @@ enterTerminal.addEventListener("click", function (event) {
     textTerminal.innerHTML += "<br /> Execute Make Triangle";
   }
 });
+
+const cursor = document.getElementById("cursor");
+
+setInterval(() => {
+  cursor.style.visibility =
+    cursor.style.visibility === "hidden" ? "visible" : "hidden";
+}, 500);
 
 function Circle(nameId, cont) {
   var cir = document.getElementById(nameId);
