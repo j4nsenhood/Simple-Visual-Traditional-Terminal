@@ -12,22 +12,25 @@ earlyTerminal();
 enterTerminal.addEventListener("click", function (event) {
   event.preventDefault();
   if (textCommand.value == "Circle") {
-    textTerminal.innerHTML += "<br /> Execute Make Circle";
+    textTerminal.innerHTML +=
+      "Circle <br /> Execute Make Circle <br />" + typingTerminal;
   }
   if (textCommand.value == "Square") {
-    textTerminal.innerHTML += "<br /> Execute Make Square";
+    textTerminal.innerHTML +=
+      "Square <br /> Execute Make Square <br />" + typingTerminal;
   }
   if (textCommand.value == "Triangle") {
-    textTerminal.innerHTML += "<br /> Execute Make Triangle";
+    textTerminal.innerHTML +=
+      "Triangle <br /> Execute Make Triangle <br />" + typingTerminal;
   }
 });
 
-const cursor = document.getElementById("cursor");
+// const cursor = document.getElementById("cursor");
 
-setInterval(() => {
-  cursor.style.visibility =
-    cursor.style.visibility === "hidden" ? "visible" : "hidden";
-}, 500);
+// setInterval(() => {
+//   cursor.style.visibility =
+//     cursor.style.visibility === "hidden" ? "visible" : "hidden";
+// }, 500);
 
 function Circle(nameId, cont) {
   var cir = document.getElementById(nameId);

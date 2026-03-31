@@ -36,7 +36,7 @@ body {
         transform: rotate(0deg);
     }
 }
-/*#cursor {
+#cursor {
     animation: blink 1s infinite;
 }
 @keyframes blink {
@@ -49,20 +49,37 @@ body {
     100% {
         opacity: 1;
     }
-}*/
+}
 
 .visual {
     width: 100%;
     padding: 10px;
-    height: 190px;
+    height: 182px;
     background-color: var(--catpputhin);
 }
 #terminaltext {
+    width: 96%;
+    height: 530px;
     padding: 10px;
     color: var(--whitecat);
     font-family: cursive;
     font-size: 24px;
+    display: inline-block;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: 0px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--whitecat);
+    border-radius: 10px;
+}
+
 .card {
     overflow: hidden;
     background-color: var(--catpputhin);
