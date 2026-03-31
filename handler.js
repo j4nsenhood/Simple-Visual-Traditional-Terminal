@@ -7,8 +7,11 @@ enterTerminal.addEventListener("click", function (event) {
   if (textCommand.value == "Circle") {
     textTerminal.innerHTML += "<br /> Execute Make Circle";
   }
-  if (textTerminal.value == "Square") {
+  if (textCommand.value == "Square") {
     textTerminal.innerHTML += "<br /> Execute Make Square";
+  }
+  if (textCommand.value == "Triangle") {
+    textTerminal.innerHTML += "<br /> Execute Make Triangle";
   }
 });
 
