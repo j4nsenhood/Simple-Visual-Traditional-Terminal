@@ -1,8 +1,15 @@
-const enterTerminal = document.getElementById("btn");
+let enterTerminal = document.querySelector('[name="setenter"]');
+let textCommand = document.querySelector('[name="command"]');
 
 enterTerminal.addEventListener("click", function (event) {
   event.preventDefault();
-  alert("tes");
+  var textTerminal = document.getElementById("terminaltext");
+  if (textCommand.value == "Circle") {
+    textTerminal.innerHTML += "<br /> Execute Make Circle";
+  }
+  if (textTerminal.value == "Square") {
+    textTerminal.innerHTML += "<br /> Execute Make Square";
+  }
 });
 
 function Circle(nameId, cont) {
