@@ -1,7 +1,8 @@
 let enterTerminal = document.querySelector('[name="setenter"]');
 let textCommand = document.querySelector('[name="command"]');
 var textTerminal = document.getElementById("terminaltext");
-const typingTerminal = "><span id=cursor>_</span>";
+
+const typingTerminal = "><span name=cursor>_</span>";
 
 function earlyTerminal() {
   textTerminal.innerHTML = typingTerminal;
@@ -12,25 +13,42 @@ earlyTerminal();
 enterTerminal.addEventListener("click", function (event) {
   event.preventDefault();
   if (textCommand.value == "Circle") {
+    textTerminal.innerHTML = "> Circle";
     textTerminal.innerHTML +=
-      "Circle <br /> Execute Make Circle <br />" + typingTerminal;
+      "<br /> Execute Make Circle <br />" + typingTerminal;
+
+    flashType();
   }
   if (textCommand.value == "Square") {
+    textTerminal.innerHTML = "> Square";
     textTerminal.innerHTML +=
-      "Square <br /> Execute Make Square <br />" + typingTerminal;
+      "<br /> Execute Make Square <br />" + typingTerminal;
+
+    flashType();
   }
   if (textCommand.value == "Triangle") {
+    textTerminal.innerHTML = "> Triangle";
     textTerminal.innerHTML +=
-      "Triangle <br /> Execute Make Triangle <br />" + typingTerminal;
+      "<br /> Execute Make Triangle <br />" + typingTerminal;
+
+    flashType();
+  }
+  if (textCommand.value == "Clear") {
+    textTerminal.innerHTML = typingTerminal;
+    flashType();
   }
 });
 
-// const cursor = document.getElementById("cursor");
+function flashType() {
+  const cursor = document.querySelector('[name="cursor"]');
 
-// setInterval(() => {
-//   cursor.style.visibility =
-//     cursor.style.visibility === "hidden" ? "visible" : "hidden";
-// }, 500);
+  setInterval(() => {
+    cursor.style.visibility =
+      cursor.style.visibility === "hidden" ? "visible" : "hidden";
+  }, 500);
+}
+
+flashType();
 
 function Circle(nameId, cont) {
   var cir = document.getElementById(nameId);
