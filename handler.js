@@ -1,6 +1,7 @@
 let enterTerminal = document.querySelector('[name="setenter"]');
 let textCommand = document.querySelector('[name="command"]');
 var textTerminal = document.getElementById("terminaltext");
+let cirvisVisual = document.querySelector('[class="cirvis"]');
 
 const typingTerminal = "><span name=cursor>_</span>";
 
@@ -13,42 +14,64 @@ earlyTerminal();
 enterTerminal.addEventListener("click", function (event) {
   event.preventDefault();
   if (textCommand.value == "Circle") {
-    textTerminal.innerHTML = "> Circle";
+    // textTerminal.innerHTML = "";
     textTerminal.innerHTML +=
-      "<br /> Execute Make Circle <br />" + typingTerminal;
+      "> Circle <br /> Execute Make Circle <br />" + typingTerminal;
 
     flashType();
+    CirvisVisualCircle();
   }
   if (textCommand.value == "Square") {
-    textTerminal.innerHTML = "> Square";
+    // textTerminal.innerHTML = "";
     textTerminal.innerHTML +=
-      "<br /> Execute Make Square <br />" + typingTerminal;
+      "> Square <br /> Execute Make Square <br />" + typingTerminal;
 
     flashType();
+    CirvisVisualSquare();
   }
   if (textCommand.value == "Triangle") {
-    textTerminal.innerHTML = "> Triangle";
+    // textTerminal.innerHTML = "";
     textTerminal.innerHTML +=
-      "<br /> Execute Make Triangle <br />" + typingTerminal;
+      "> Triangle <br /> Execute Make Triangle <br />" + typingTerminal;
 
     flashType();
   }
   if (textCommand.value == "Clear") {
     textTerminal.innerHTML = typingTerminal;
     flashType();
+    CirvisClear();
   }
 });
 
 function flashType() {
+  let id = null;
   const cursor = document.querySelector('[name="cursor"]');
-
-  setInterval(() => {
+  clearInterval(id);
+  id = setInterval(visibilityCursor, 500);
+  function visibilityCursor() {
     cursor.style.visibility =
       cursor.style.visibility === "hidden" ? "visible" : "hidden";
-  }, 500);
+  }
 }
 
 flashType();
+
+function CirvisVisualSquare() {
+  cirvisVisual.style.borderRadius = "0px";
+  cirvisVisual.style.animationName = "cirvisTransform";
+  cirvisVisual.style.animationDuration = "8s";
+}
+
+function CirvisVisualCircle() {
+  cirvisVisual.style.borderRadius = "20px";
+  cirvisVisual.style.animationName = "cirvisCircleTransform";
+  cirvisVisual.style.animationDuration = "12s";
+}
+
+function CirvisClear() {
+  cirvisVisual.style.borderRadius = "0px";
+  cirvisVisual.style.animationName = "none";
+}
 
 function Circle(nameId, cont) {
   var cir = document.getElementById(nameId);

@@ -17,7 +17,8 @@ body {
     margin-top: 50px;
     height: 50px;
     width: 50px;
-    animation-name: cirvisTransform;
+    border-radius: 0;
+    animation-name: none;
     animation-duration: 8s;
     animation-iteration-count: infinite;
 }
@@ -34,6 +35,29 @@ body {
     100% {
         background-color: var(--catpputhin);
         transform: rotate(0deg);
+    }
+}
+
+@keyframes cirvisCircleTransform {
+    0% {
+        background-color: var(--catpputhin);
+        transform: translate(10px, 0px);
+    }
+    25% {
+        background-color: var(--catpputhinborder);
+        transform: translate(10px, 10px);
+    }
+    50% {
+        background-color: var(--whitecat);
+        transform: translate(0px, -10px);
+    }
+    75% {
+        background-color: var(--catpputhinborder);
+        transform: translate(-10px, -10px);
+    }
+    100% {
+        background-color: var(--catpputhin);
+        transform: translate(10px, 0px);
     }
 }
 
