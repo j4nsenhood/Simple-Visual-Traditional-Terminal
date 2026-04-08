@@ -6,7 +6,7 @@ let cirvisVisual = document.querySelector('[class="cirvis"]');
 const typingTerminal = "><span name=cursor>_</span>";
 
 function earlyTerminal() {
-  textTerminal.innerHTML = typingTerminal;
+  textTerminal.innerHTML += typingTerminal;
 }
 
 earlyTerminal();
@@ -16,7 +16,7 @@ enterTerminal.addEventListener("click", function (event) {
   if (textCommand.value == "Circle") {
     // textTerminal.innerHTML = "";
     textTerminal.innerHTML +=
-      "> Circle <br /> Execute Make Circle <br />" + typingTerminal;
+      " Circle <br /> Execute Make Circle <br />" + typingTerminal;
 
     flashType();
     CirvisVisualCircle();
@@ -24,7 +24,7 @@ enterTerminal.addEventListener("click", function (event) {
   if (textCommand.value == "Square") {
     // textTerminal.innerHTML = "";
     textTerminal.innerHTML +=
-      "> Square <br /> Execute Make Square <br />" + typingTerminal;
+      " Square <br /> Execute Make Square <br />" + typingTerminal;
 
     flashType();
     CirvisVisualSquare();
@@ -32,9 +32,10 @@ enterTerminal.addEventListener("click", function (event) {
   if (textCommand.value == "Triangle") {
     // textTerminal.innerHTML = "";
     textTerminal.innerHTML +=
-      "> Triangle <br /> Execute Make Triangle <br />" + typingTerminal;
+      " Triangle <br /> Execute Make Triangle <br />" + typingTerminal;
 
     flashType();
+    CirvisVisualTriangle();
   }
   if (textCommand.value == "Clear") {
     textTerminal.innerHTML = typingTerminal;
@@ -57,15 +58,31 @@ function flashType() {
 flashType();
 
 function CirvisVisualSquare() {
+  cirvisVisual.style.width = "50px";
+  cirvisVisual.style.height = "50px";
   cirvisVisual.style.borderRadius = "0px";
-  cirvisVisual.style.animationName = "cirvisTransform";
+  cirvisVisual.style.animationName = "cirvisSquareTransform";
   cirvisVisual.style.animationDuration = "8s";
+  cirvisVisual.style.border = "0";
 }
 
 function CirvisVisualCircle() {
-  cirvisVisual.style.borderRadius = "20px";
+  cirvisVisual.style.width = "50px";
+  cirvisVisual.style.height = "50px";
+  cirvisVisual.style.borderRadius = "50px";
   cirvisVisual.style.animationName = "cirvisCircleTransform";
   cirvisVisual.style.animationDuration = "12s";
+  cirvisVisual.style.border = "0";
+}
+function CirvisVisualTriangle() {
+  cirvisVisual.style.borderRadius = "0";
+  cirvisVisual.style.width = "0px";
+  cirvisVisual.style.height = "0px";
+  cirvisVisual.style.borderRight = "50px solid transparent";
+  cirvisVisual.style.borderLeft = "50px solid transparent";
+  cirvisVisual.style.borderBottom = "50px solid var(--catpputhin)";
+  cirvisVisual.style.animationName = "cirvisTriangleTransform";
+  cirvisVisual.style.animationDuration = "16s";
 }
 
 function CirvisClear() {
