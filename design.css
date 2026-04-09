@@ -26,14 +26,32 @@ body {
 @keyframes cirvisSquareTransform {
     0% {
         background-color: var(--catpputhin);
+        border: 0px solid var(--catpputhin);
+        box-shadow: 0px 0px 0px 0px var(--catpputhinborder);
         transform: rotate(0deg);
+    }
+    25% {
+        background-color: var(--catpputhin);
+        border: 5px dotted var(--catpputhinborder);
+        box-shadow: 5px 5px 1px 1px var(--whitecat);
+        transform: rotate(90deg);
     }
     50% {
         background-color: var(--whitecat);
+        border: 10px double var(--catpputhinborder);
+        box-shadow: 10px 10px 5px 5px var(--catpputhin);
         transform: rotate(60deg);
+    }
+    75% {
+        background-color: var(--catpputhin);
+        border: 5px dashed var(--catpputhinborder);
+        box-shadow: -5px -5px 1px -1px var(--whitecat);
+        transform: rotate(90deg);
     }
     100% {
         background-color: var(--catpputhin);
+        border: 0px solid var(--catpputhin);
+        box-shadow: 0px 0px 0px 0px var(--catpputhinborder);
         transform: rotate(0deg);
     }
 }
@@ -41,22 +59,32 @@ body {
 @keyframes cirvisCircleTransform {
     0% {
         background-color: var(--catpputhin);
+        border: 0px solid var(--catpputhin);
+        box-shadow: 0px 0px 0px 0px var(--catpputhinborder);
         transform: translate(10px, 0px);
     }
     25% {
         background-color: var(--catpputhinborder);
+        border: 5px dotted var(--whitecat);
+        box-shadow: 5px 5px 1px 1px var(--whitecat);
         transform: translate(10px, 10px);
     }
     50% {
         background-color: var(--whitecat);
+        border: 10px double var(--catpputhinborder);
+        box-shadow: 10px 10px 5px 5px var(--catpputhin);
         transform: translate(0px, -10px);
     }
     75% {
         background-color: var(--catpputhinborder);
+        border: 5px dashed var(--whitecat);
+        box-shadow: -5px -5px 1px -1px var(--whitecat);
         transform: translate(-10px, -10px);
     }
     100% {
         background-color: var(--catpputhin);
+        border: 0px solid var(--catpputhin);
+        box-shadow: 0px 0px 0px 0px var(--catpputhinborder);
         transform: translate(10px, 0px);
     }
 }
@@ -64,22 +92,27 @@ body {
 @keyframes cirvisTriangleTransform {
     0% {
         border-bottom: 50px solid var(--catpputhin);
+        box-shadow: 0px 0px 0px 0px var(--catpputhinborder);
         transform: rotate(0deg) translate(20px, 0px);
     }
     25% {
-        border-bottom: 50px solid var(--catpputhinborder);
+        border-bottom: 50px dotted var(--catpputhinborder);
+        box-shadow: 0px 1px 0px 0px var(--whitecat);
         transform: rotate(90deg) translate(20px, 20px);
     }
     50% {
-        border-bottom: 50px solid var(--whitecat);
+        border-bottom: 60px double var(--whitecat);
+        box-shadow: 0px 10px 5px 0px var(--catpputhin) inset;
         transform: rotate(180deg) translate(0px, -20px);
     }
     75% {
-        border-bottom: 50px solid var(--catpputhinborder);
+        border-bottom: 50px dashed var(--catpputhinborder);
+        box-shadow: 0px 1px 0px 0px var(--whitecat);
         transform: rotate(270deg) translate(-20px, -20px);
     }
     100% {
         border-bottom: 50px solid var(--catpputhin);
+        box-shadow: 0px 0px 0px 0px var(--catpputhinborder);
         transform: rotate(0deg) translate(20px, 0px);
     }
 }

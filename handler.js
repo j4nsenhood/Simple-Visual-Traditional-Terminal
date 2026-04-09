@@ -1,6 +1,7 @@
 let enterTerminal = document.querySelector('[name="setenter"]');
 let textCommand = document.querySelector('[name="command"]');
-var textTerminal = document.getElementById("terminaltext");
+let textTerminal = document.getElementById("terminaltext");
+let canvasDraw = document.getElementById("draw");
 let cirvisVisual = document.querySelector('[class="cirvis"]');
 
 const typingTerminal = "><span name=cursor>_</span>";
@@ -20,6 +21,7 @@ enterTerminal.addEventListener("click", function (event) {
 
     flashType();
     CirvisVisualCircle();
+    CircleCanvas();
   }
   if (textCommand.value == "Square") {
     // textTerminal.innerHTML = "";
@@ -28,6 +30,7 @@ enterTerminal.addEventListener("click", function (event) {
 
     flashType();
     CirvisVisualSquare();
+    SquareCanvas();
   }
   if (textCommand.value == "Triangle") {
     // textTerminal.innerHTML = "";
@@ -90,32 +93,43 @@ function CirvisClear() {
   cirvisVisual.style.animationName = "none";
 }
 
-function Circle(nameId, cont) {
-  var cir = document.getElementById(nameId);
-  var ctx = cir.getContext(cont);
+function CircleCanvas() {
+  var ctx = canvasDraw.getContext("2d");
+  ctx.reset();
   ctx.beginPath();
   ctx.arc(50, 50, 30, 0, 2 * Math.PI);
   ctx.stroke();
+  ctx.closePath();
+}
+
+function SquareCanvas() {
+  var ctx = canvasDraw.getContext("2d");
+  ctx.reset();
+  ctx.beginPath();
+  ctx.rect(50, 50, 30, 30);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  ctx.closePath();
 }
 function tes() {
   console.log("ayama");
 }
 
-async function terminalIdle(name) {
-  let choice = 1;
-  switch (choice) {
-    case 1:
-      document.getElementById(name).innerHTML = "<";
-      await delay(1000);
-      choice = 2;
-      break;
-    case 2:
-      document.getElementById(name).innerHTML = "<_";
-      await delay(1000);
-      choice = 1;
-      break;
-  }
-}
+// async function terminalIdle(name) {
+//   let choice = 1;
+//   switch (choice) {
+//     case 1:
+//       document.getElementById(name).innerHTML = "<";
+//       await delay(1000);
+//       choice = 2;
+//       break;
+//     case 2:
+//       document.getElementById(name).innerHTML = "<_";
+//       await delay(1000);
+//       choice = 1;
+//       break;
+//   }
+// }
 
-terminalIdle(terminaltext);
-Circle("draw", "2d");
+// terminalIdle(terminaltext);
+// Circle();
