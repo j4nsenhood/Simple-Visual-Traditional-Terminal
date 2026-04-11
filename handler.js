@@ -96,10 +96,17 @@ function CirvisClear() {
 function CircleCanvas() {
   var ctx = canvasDraw.getContext("2d");
   ctx.reset();
+  ctx.strokeStyle = "rgb(206 203 212 / 100%)";
   ctx.beginPath();
   ctx.arc(50, 50, 30, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
+
+  // requestAnimationFrame();
+}
+
+function animcircle() {
+  // requestAnimationFrame();
 }
 
 function SquareCanvas() {
